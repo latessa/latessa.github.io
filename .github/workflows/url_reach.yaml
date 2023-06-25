@@ -9,7 +9,6 @@ on:
       - main
 
 env:
-  REPO_NAME: ${{ github.event.repository.name }}
   URO_TO_TEST: "https://latessa.github.io"
 
 jobs:
@@ -26,4 +25,4 @@ jobs:
 
       - name: Test URL
         run: |
-          python3 ${GITHUB_WORKSPACE}/${REPO_NAME}/tests/val.py $URL_TO_TEST
+          python3 ${GITHUB_WORKSPACE}/tests/val.py $URL_TO_TEST
