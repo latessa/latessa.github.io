@@ -9,7 +9,7 @@ try:
     if valid.status_code == 200:
         print(f"{site} is reachable.")
     else:
-        print(f"{site}: is Not reachable, status_code: {valid.status_code}")
+        raise SystemExit(f"{site}: is Not reachable, status_code: {valid.status_code}")
 
 except requests.exceptions.RequestException as e:
     raise SystemExit(f"{site}: is Not reachable \nErr: {e}")
