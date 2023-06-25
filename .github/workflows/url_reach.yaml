@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          path: #{{ github.event.repository.name }}
+          path: {{ github.event.repository.name }}
         
       - name: Install Dependencies
         run: |
