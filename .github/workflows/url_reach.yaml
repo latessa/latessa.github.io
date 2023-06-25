@@ -1,0 +1,31 @@
+name: reachable URL test
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+  URO_TO_TEST: "https://latessa.github.io"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          path: #{{ github.event.repository.name }}
+        
+      - name: Install Dependencies
+        run: |
+          pip install requests
+
+      - name: Test URL
+        run: |
+          python3 ${GITHUB_WORKSPACE}/${REPO_NAME}/tests/val.py $URL_TO_TEST
