@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  URO_TO_TEST: "https://latessa.github.io"
+  URL_TO_TEST: "https://latessa.github.io
 
 jobs:
   test:
